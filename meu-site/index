@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Connect</title>
+    <style>
+        body {
+            font-family: Georgia, Times, Times New Roman, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header img {
+            width: 50px; /* Ajuste o tamanho conforme necessário */
+            position: absolute;
+            left: 20px; /* Posiciona a logo à esquerda */
+            top: 10px;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #fff;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 5px;
+            border-bottom: 1px solid #444;
+        }
+        .menu a:hover {
+            background: #444;
+        }
+        .submenu {
+            display: none;
+            padding-left: 10px;
+        }
+        .submenu a {
+            border-bottom: none;
+        }
+        .menu-item:hover .submenu {
+            display: block;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            background-color: #6E9ECF; /* Cor atualizada */
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .project {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 20px);
+            padding: 20px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .project img {
+            width: 100%;
+            height: 100px; 
+            object-fit: cover; 
+            border-radius: 8px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .project {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .project {
+                width: 100%;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="imagens/logo.png" alt="Logo Casa Connect"> <!-- Logo inserida aqui -->
+        <h1>Casa Connect</h1>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div id="menu" class="menu">
+            <div class="menu-item">
+                <a href="#">Início</a>
+            </div>
+            <div class="menu-item">
+                <a href="#projects">Projetos</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Contato</a>
+                <div class="submenu">
+                    <a href="tel:+1112345678">Telefone: (83) 98808-7981</a>
+                    <a href="mailto:contato@casaconnect.com">E-mail: contato@casaconnect.com</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h2>Transforme sua casa com nossa automação inteligente</h2>
+        <p>Oferecemos soluções inovadoras para tornar sua residência mais inteligente, segura e eficiente.</p>
+    </div>
+
+    <div class="container">
+        <section id="projects">
+            <h2>Nossos Projetos</h2>
+            <div class="projects">
+                <div class="project" onclick="window.location.href='projeto1.html'">
+                    <img src="imagens/projeto1.webp" alt="Projeto 1">
+                    <h3>Projeto de Iluminação Inteligente</h3>
+                    <p>Instalação de um sistema de iluminação que pode ser controlado por smartphone.</p>
+                </div>
+                <div class="project" onclick="window.location.href='projeto2.html'">
+                    <img src="imagens/projeto2.webp" alt="Projeto 2">
+                    <h3>Controle de Temperatura</h3>
+                    <p>Sistema de controle de temperatura e climatização integrado com sensores.</p>
+                </div>
+                <div class="project" onclick="window.location.href='projeto3.html'">
+                    <img src="imagens/projeto3.png" alt="Projeto 3">
+                    <h3>Sistema de Segurança</h3>
+                    <p>Câmeras de segurança e sensores de movimento conectados a um sistema de alarme.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Casa Connect. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
